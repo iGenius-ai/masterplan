@@ -1,0 +1,213 @@
+.profile {
+  padding: 1rem;
+}
+
+.profile-heading {
+  margin-bottom: .5rem;
+}
+
+.profile-title {
+  border-bottom: 2px solid var(--teal);
+  width: max-content;
+}
+
+.profile__table {
+  width: 100%;
+  margin-top: 1rem;
+  border: 2px solid var(--text-grey);
+}
+
+.profile__table > tbody, .profile__table > tbody > tr {
+  border: 2px solid var(--text-grey);
+}
+
+.profile__table > tbody > tr > td {
+  border: 1px solid var(--text-grey);
+}
+
+/* Student Area */
+section.students, .student__row {
+  padding: 1rem;
+}
+
+.student__row {
+  box-shadow: none;
+}
+
+.row__box {
+  width: 60%;
+  border-top: 3px solid var(--main-color);
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--text-grey);
+  font-size: 13px;
+}
+
+.row__box-2 {
+  width: 90%;
+  border-top: 3px solid var(--main-color);
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--text-grey);
+}
+
+.level__box-header {
+  border-bottom: 2px solid var(--text-grey);
+  padding-bottom: .4rem;
+}
+
+.level__box-body {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.level__title {
+  padding: .5rem;
+}
+
+select {
+  height: 3rem;
+  width: 12rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  padding: 10px;
+}
+
+.level__submit {
+  padding: 0 1rem;
+}
+
+.level__btn {
+  width: 6.9rem;
+  height: 2.3rem;
+  font-weight: 600;
+  background: #fff;
+  color: var(--text-grey);
+  border: 2px solid var(--text-grey);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.level__btn:hover {
+  color: #fff;
+  background: var(--text-grey);
+  transition: all .3s ease-in-out;
+}
+
+.level__title, .level__option, .level__submit {
+  margin: 0 1rem;
+}
+
+.student__detail {
+  width: 100%;
+  border: 1px solid #f0f0f0;
+}
+
+
+.student__detail > thead > tr > th {
+  border: 1px solid #f0f0f0;
+  padding-left: 10px;
+  text-align: left;
+}
+
+@media screen and (min-width: 1201px) {
+  .row__box {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  header h2 {
+    font-size: 1rem;
+  }
+  header h2 label {
+    margin-right: -10px;
+  }
+  .search-wrapper {
+    width: 39%;
+  }
+  .user-wrapper {
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .row__box {
+    width: 530px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header h2 label {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  header h2 label {
+    margin-right: 5px;
+  }
+  .user-wrapper {
+    margin-left: 0;
+  }
+  section.students, .student__row {
+    padding: 1rem;
+  }
+  .row__box {
+    width: 100%;
+  }
+  .level__box-body {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+  }
+  .level__title, .level__option, .level__submit {
+    margin: 0 .3rem;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  section.students, .student__row {
+    padding: 1rem .4rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h2 > label > span {
+    margin-left: 0px;
+  }
+  .user-wrapper {
+    margin-left: 2rem;
+    font-size: 14px;
+  }
+  section.students, .student__row {
+    padding: 1rem 0;
+  }
+  .row__box {
+    width: 100%;
+  }
+  .level__box-body {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+  }
+  .level__option {
+    margin: .2rem 1rem 1rem 1rem;
+  }
+  .row__box-2 > .level__box > .level__box-body {
+    font-size: 10px;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .row__box-2 {
+    width: 100%;
+    font-size: smaller;
+  }
+}

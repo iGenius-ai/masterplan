@@ -1,0 +1,57 @@
+:root {
+  --main-color: #dd2f6e;
+  --color-dark: #1d2231;
+  --text-grey: #8390a2;
+}
+
+form {
+  padding: 1rem;
+  width: 100% !important;
+  background: white;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .2);
+}
+form * {
+  font-family: "Work Sans", serif;
+}
+form .group_ {
+  margin: 1.5rem;
+}
+form .group_ label {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 1.5rem 0 .2rem 0;
+}
+form .group_ input {
+  padding: .7rem;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+}
+form .group_ select {
+  width: 100%;
+  font-size: .9rem;
+}
+form .group_ label > .publish {
+  border: 1px solid black;
+  width: 3%;
+}
+form .group_ .postBtn {
+  width: 20%;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: .5rem 0;
+  background: white;
+  letter-spacing: 1px;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+form .group_ .postBtn:hover {
+  background: var(--main-color);
+  color: white;
+  transition: all .3s ease-in-out;
+}
+
+input:disabled {
+  cursor: not-allowed;
+}

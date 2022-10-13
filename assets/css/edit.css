@@ -1,0 +1,250 @@
+:root {
+  --primary-color: rgb(11, 78, 179);
+}
+
+/* Global Stylings */
+label {
+  display: block;
+  font-family: 'Muli', serif;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+select {
+  padding: .75rem;
+  font-family: 'Muli', serif;
+  font-weight: 600;
+  width: 100%;
+  border: 1px solid #a0daa0;
+}
+option {
+  font-family: 'Muli', serif;
+  font-weight: 600;
+}
+select:focus {
+  outline: none;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-family: 'Muli', serif;
+  font-weight: 600;
+  padding: .75rem;
+  border: 1px solid #a0daa0;
+  border-radius: .25rem;
+}
+textarea {
+  resize: none;
+}
+input:focus {
+  outline: none;
+}
+.width-50 {
+  width: 50%;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Progress Bars */
+.progressBar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 3rem 4rem;
+  z-index: -1;
+}
+.progressBar::before, .progress {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background: #dcdcdc;
+  z-index: -1;
+}
+.progress {
+  background: var(--primary-color);
+  transition: .35s;
+  width: 0;
+}
+.progress-step {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 100%;
+  font-size: 0.95rem;
+  color: #666;
+  width: 50%;
+  text-align: center;
+}
+.progress-step-active {
+  background: var(--primary-color);
+  color: #f3f3f3;
+}
+
+/* Form */
+.form {
+  width: 90%;
+  margin: 6rem auto;
+  margin-top: 1rem;
+  border: 1px solid #cccc;
+  border-radius: .35rem;
+  padding: 1.5rem;
+  font-family: 'Work Sans', serif;
+}
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate .5s;
+}
+.form-step-active {
+  display: block;
+}
+.input-group {
+  margin: 1.5rem 0;
+}
+.input-group-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.input-group-flex > .input-group {
+  width: 100%;
+  flex: 0 0 48%;
+}
+.input-group-flex > .input-group > select {
+  padding: .75rem;
+  width: 100%;
+}
+.snapshot {
+  width: 145px;
+  height: 127px;
+  border: 1px solid #a0daa0;
+  margin: 1% auto;
+  text-align: center;
+}
+.input-group .submit_ {
+  width: 50%;
+  background: #a0daa0;
+  color: green;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .3s;
+}
+.input-group .submit_:hover {
+  color: #a0daa0;
+  background: green;
+  transition: all .3s ease-in-out;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+.btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.btn {
+  margin-top: 1.5rem;
+  font-family: inherit;
+  padding: .75rem;
+  display: block;
+  text-decoration: none;
+  background: var(--primary-color);
+  color: #f3f3f3;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: .25rem;
+  transition: .3s;
+  width: 100%;
+}
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  transition: all .3s ease-in-out;
+}
+
+/* Tables */
+.table {
+  width: 100%;
+  border: 1px solid #a0daa0;
+}
+thead tr {
+  border-top: 1px solid #a0daa0;
+  border-bottom: 1px solid #a0daa0;
+}
+thead tr > th {
+  border: 1px solid #a0daa0;
+  padding-left: 10px;
+  text-align: left;
+  padding: .6rem 1rem;
+}
+td {
+  padding: .6rem 1rem;
+  border: 1px solid #a0daa0;
+  font-size: 85%;
+  color: #222;
+}
+td > input {
+  border: none;
+  outline: none;
+  padding: .2rem;
+}
+input::placeholder {
+  color: lightslategray;
+}
+select:disabled, input:disabled {
+  cursor: not-allowed;
+}
+
+/* PHP */
+.msg {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: .3rem;
+  list-style: none;
+  text-align: center;
+}
+.success {
+  color: var(--green);
+  font-weight: 600;
+  background: #28a74523;
+  padding: .5rem;
+  font-size: .7rem; 
+}
+.error {
+  color: var(--red);
+  font-weight: 600;
+  background: #dc354523;
+  padding: .5rem;
+  font-size: .7rem;
+}

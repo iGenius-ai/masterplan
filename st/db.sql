@@ -1,0 +1,28 @@
+CREATE TABLE `masterplan`.`users` ( 
+  `id` INT(11) NOT NULL AUTO_INCREMENT , 
+  `full_name` VARCHAR(255) NOT NULL , 
+  `nin` BIGINT(11) NOT NULL , 
+  `dob` DATE NOT NULL , 
+  `gender` VARCHAR(100) NOT NULL , 
+  `m_status` VARCHAR(255) NOT NULL , `disabled` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `phone` BIGINT(20) NOT NULL , `address` VARCHAR(255) NOT NULL , `nationality` VARCHAR(255) NOT NULL , `s_origin` VARCHAR(255) NOT NULL , `lga` VARCHAR(255) NOT NULL , `p_name` VARCHAR(255) NOT NULL , `p_mobile` VARCHAR(255) NOT NULL , `p_nin` VARCHAR(255) NOT NULL , `program` VARCHAR(255) NOT NULL , `one_uni` VARCHAR(255) NOT NULL , `course1` VARCHAR(255) NOT NULL , `two_uni` VARCHAR(255) NOT NULL , `course2` VARCHAR(255) NOT NULL , `three_uni` VARCHAR(255) NOT NULL , `course3` VARCHAR(255) NOT NULL , `image` VARCHAR(255) NOT NULL , `subject1` VARCHAR(255) NOT NULL , `subject2` VARCHAR(255) NOT NULL , `subject3` VARCHAR(255) NOT NULL , `subject4` VARCHAR(255) NOT NULL , `waec1` VARCHAR(255) NOT NULL , `grade1` VARCHAR(255) NOT NULL , `waec2` VARCHAR(255) NOT NULL , `grade2` VARCHAR(255) NOT NULL , `waec3` VARCHAR(255) NOT NULL , `grade3` VARCHAR(255) NOT NULL , `waec4` VARCHAR(255) NOT NULL , `grade4` VARCHAR(255) NOT NULL , `waec5` VARCHAR(255) NOT NULL , `grade5` VARCHAR(255) NOT NULL , `waec6` VARCHAR(255) NOT NULL , `grade6` VARCHAR(255) NOT NULL , `waec7` VARCHAR(255) NOT NULL , `grade7` VARCHAR(255) NOT NULL , `waec8` VARCHAR(255) NOT NULL , `grade8` VARCHAR(255) NOT NULL , `waec9` VARCHAR(255) NOT NULL , `grade9` VARCHAR(255) NOT NULL , `admin` TINYINT(11) NOT NULL , `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`), UNIQUE (`nin`), UNIQUE (`email`)) ENGINE = InnoDB;
+
+-- Gallery
+CREATE TABLE `masterplan`.`gallery` ( 
+  `id` INT(11) NOT NULL AUTO_INCREMENT , 
+  `year_name` VARCHAR(255) NOT NULL , 
+  `description` TEXT NOT NULL , PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+-- Images
+CREATE TABLE `masterplan`.`images` ( 
+  `id` INT(11) NOT NULL AUTO_INCREMENT , 
+  `title` VARCHAR(255) NOT NULL , 
+  `image` VARCHAR(255) NOT NULL , 
+  `year_id` INT(11) NOT NULL , 
+  `description` TEXT NOT NULL , 
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+ALTER TABLE `images` 
+ADD FOREIGN KEY (`year_id`) 
+REFERENCES `gallery`(`id`) 
+ON DELETE SET NULL ON UPDATE CASCADE;

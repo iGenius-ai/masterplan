@@ -1,0 +1,353 @@
+:root {
+  --primary-color: rgb(11, 78, 179);
+  --DM_Mono: "DM Mono Light", serif;
+}
+
+/* Global Stylings */
+label {
+  font-family: var(--DM_Mono);
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+select {
+  padding: .5rem;
+  font-family: var(--DM_Mono);
+  font-weight: 600;
+  width: 100%;
+  border: 1px solid #a0daa0;
+}
+option {
+  font-family: var(--DM_Mono);
+  font-weight: 600;
+}
+select:focus {
+  outline: none;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  font-size: .85rem;
+  font-family: var(--DM_Mono);
+  font-weight: 600;
+  padding: .75rem;
+  border: 1px solid #a0daa0;
+  border-radius: .25rem;
+}
+textarea {
+  resize: none;
+}
+input:focus {
+  outline: none;
+}
+.width-50 {
+  width: 50%;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Progress Bars */
+.progressBar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 6rem 4rem;
+}
+.progressBar::before, .progress {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background: #dcdcdc;
+  z-index: -1;
+}
+.progress {
+  background: var(--primary-color);
+  transition: .35s;
+  width: 0;
+}
+.progress-step {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 100%;
+  font-size: 0.95rem;
+  color: #666;
+  width: 50%;
+  text-align: center;
+}
+.progress-step-active {
+  background: var(--primary-color);
+  color: #f3f3f3;
+}
+
+/* Form */
+form label {
+  display: block;
+}
+.form {
+  width: 70%;
+  margin: 6rem auto;
+  margin-top: 1rem;
+  border: 1px solid #cccc;
+  border-radius: .35rem;
+  padding: 1.5rem;
+  font-family: 'Work Sans', serif;
+  box-shadow: 0px 0.1rem 2rem 5px #274e27;
+}
+.enquiry {
+  box-shadow: 0px 0.1rem 1rem 5px #a0daa0;
+}
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate .5s;
+}
+.form-step-active {
+  display: block;
+}
+.form-step small {
+  display: block;
+  text-align: right;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+.form-step small > span {
+  color: red;
+  font-weight: 800;
+}
+.input-group {
+  margin: 0 0 1.5rem 0;
+}
+.input-group-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.input-group-flex > .input-group {
+  width: 100%;
+  flex: 0 0 48%;
+  margin-top: 0;
+}
+.input-group-flex > .input-group > select {
+  padding: .75rem;
+  width: 100%;
+}
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-top: 1rem;
+}
+.checked {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: .3rem 0 1rem 0;
+}
+.checked label {
+  margin: 0;
+}
+.checked input {
+  width: max-content;
+  margin-left: .3rem;
+}
+form label > strong {
+  color: red;
+}
+.snapshot {
+  width: 145px;
+  height: 127px;
+  border: 1px solid #a0daa0;
+  margin: 1% auto;
+  text-align: center;
+}
+.input-group .submit_ {
+  width: 50%;
+  background: #a0daa0;
+  color: green;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .3s;
+}
+.input-group .submit_:hover {
+  color: #a0daa0;
+  background: green;
+  transition: all .3s ease-in-out;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+.btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.btn {
+  margin-top: 1.5rem;
+  font-family: "DM Mono Medium";
+  padding: .75rem;
+  display: block;
+  text-decoration: none;
+  background: var(--primary-color);
+  color: #f3f3f3;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: .25rem;
+  transition: .3s;
+  width: 100%;
+}
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  transition: all .3s ease-in-out;
+}
+
+/* Tables */
+.table {
+  width: 100%;
+  border: 1px solid #a0daa0;
+}
+thead tr {
+  border-top: 1px solid #a0daa0;
+  border-bottom: 1px solid #a0daa0;
+}
+thead tr > th {
+  border: 1px solid #a0daa0;
+  padding-left: 10px;
+  text-align: left;
+  padding: .6rem 1rem;
+}
+td {
+  padding: .6rem 1rem;
+  border: 1px solid #a0daa0;
+  font-size: 85%;
+  color: #222;
+}
+td > input {
+  border: none;
+  outline: none;
+  padding: .2rem;
+}
+input::placeholder {
+  color: lightslategray;
+}
+
+/* Result PDF */
+.pdf {
+  padding: 1rem;
+  margin: 0 auto;
+}
+.pdf-1 h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.pdf-1 h4 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+.pdf-grid {
+  padding: .5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.pdf-flex {
+  margin: 0 1.2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+.pdf-1 {
+  text-align: center;
+}
+.pdf-2 {
+  flex: 0 0 38%;
+}
+.pdf-3 {
+  flex: 0 0 50%;
+}
+.pdf-2 > h4, .pdf-3 > h4, .pdf-4 > h4 {
+  padding: .5rem 0;
+  margin: .5rem 0;
+  font-size: 1.3rem;
+}
+.pdf-2 > p, .pdf-3 > p, .pdf-4 > p {
+  font-size: 1.1rem;
+}
+.table-flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1.2rem;
+  margin-top: 2rem;
+}
+.table-flex .table-1 {
+  flex: 0 0 30%;
+}
+.table-flex .table-2 {
+  flex: 0 0 60%;
+}
+
+/* For Popup window. */
+#picturebox {
+  display: none;
+  position: fixed;
+  border: 0; top: 0; right: 0; left: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  z-index: 9999;
+  background-color: rgba(239,239,239,.9);
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-box-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-transition:.2s opacity;
+  transition:.2s opacity;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+.revdivshowimg {
+  display:block;
+  width:300px; 
+  top:20%;
+  text-align:center;
+  margin:0 auto;
+  padding:0;
+  position:relative;
+  background-color:#fff;
+  -webkit-box-shadow: 6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
+  box-shadow: 6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
+  -moz-box-shadow: 6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
+  overflow: hidden;
+}
